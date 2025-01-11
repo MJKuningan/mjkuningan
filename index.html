@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ KUNINGAN</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo2.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url();
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            flex: 1;
+            max-width: 150px;
+        }
+
+        header .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        header nav {
+            flex: 2;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #424242;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .logo {
+                margin-bottom: 1rem;
+            }
+            header .logo a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+header .logo a img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+            header nav {
+                width: 100%;
+            }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: #33333358;
+                color: #ffffff76;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+            }
+
+            .menu-toggle:hover {
+                background: #797676d3;
+            }
+
+            .menu-toggle.active + nav ul {
+                display: flex;
+            }
+        }
+        /* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu-toggle.active + nav ul {
+        display: flex;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+
+        .hero {
+            background: url("./img/foto1.jpg") no-repeat center center/cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .learn-more {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: #565a80;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hero .learn-more:hover {
+            background-color: #bab4b4;
+        }
+
+        .services {
+            padding: 2rem;
+            background: url('./img/nium.png');
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .services .card {
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .services .card:nth-child(1) {
+            background: url('./img/kuningan.png');
+        }
+
+        .services .card:nth-child(2) {
+            background: url(./img/stainless.png);
+        }
+
+        .services .card:nth-child(3) {
+            background:url(./img/besi.png);
+        }
+
+        .services .card:nth-child(4) {
+            background: url(./img/nium.png);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .highlights {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .highlights h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .highlight-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .highlight-card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .highlight-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #0c1147bd;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: left;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+
+        .footer-content div {
+            flex: 1;
+            padding: 0 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 0.5rem;
+            background-color: #4f1111c9;
+        }
+        
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero {
+                height: auto;
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .services h2, .highlights h2 {
+                font-size: 1.2rem;
+            }
+
+            .highlight-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="menu-toggle">menu</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>MAMAN JAYA</h1>
+                <h2 class="subheading">KUNINGAN</h2>
+                <p>FURNITURE ACCESSORIES AND HARDWARE PRODUCTS</p>
+                <a href="catalog.html" class="learn-more">Product Catalog &rarr;</a>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Kategori Produk</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>01</h3>
+                    <h4>Brass</h4>
+                    <div class="card-footer">
+                        <p>Metalwork</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>02</h3>
+                    <h4>Stainless Steel</h4>
+                    <div class="card-footer">
+                        <p>Metalwork</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>03</h3>
+                    <h4>Iron</h4>
+                    <div class="card-footer">
+                        <p>Metalwork</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>04</h3>
+                    <h4>Aluminium</h4>
+                    <div class="card-footer">
+                        <p>Metalwork</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <h2>Kenapa Memilih Kami?</h2>
+            <div class="highlight-cards">
+                <div class="highlight-card">
+                    <h3>Jaminan Kualitas</h3>
+                    <p>Kami memastikan kualitas tertinggi di semua produk kami melalui pengujian dan kontrol kualitas yang ketat.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Desain Inovatif</h3>
+                    <p>Desain kami berada di garis depan tren modern, menggabungkan fungsionalitas dengan estetika.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Kepuasan Pelanggan</h3>
+                    <p>Kepuasan Anda adalah prioritas kami. Kami berusaha memberikan pelayanan dan produk terbaik untuk memenuhi kebutuhan Anda.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <center>
+                <div class="about-us">
+                    <h3>Tentang Kami</h3>
+                    <p>MAMAN JAYA Kuningan adalah sebuah perusahaan produksi furniture accesories yang berdiri sejak tahun 1996.</p>
+                    <div class="social-media">
+                        <a href="https://wa.me/628122902033" class="social-icon">
+                            <img src="./img/wa.png" alt="WhatsApp" width="24" height="24">
+                        </a>
+                        <a href="https://www.instagram.com/mamanjaya.kuningan/" class="social-icon">
+                            <img src="./img/ig.png" alt="Instagram" width="24" height="24">
+                        </a>
+                        <!--<a href="#" class="social-icon">
+                            <img src="./img/fb.png" alt="Facebook" width="24" height="24">
+                        </a>-->
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="footer-bottom">
+            <a href="#top" class="back-to-top">Kembali Ke Atas</a>
+            <p>&copy;2025 All Rights Reserved. PT. Logam Jaya Abadi.</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

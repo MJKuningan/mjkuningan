@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ KUNINGAN</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo2.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url(./img/kuningan.png);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            flex: 1;
+            max-width: 150px;
+        }
+
+        header .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        header nav {
+            flex: 2;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #424242;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .logo {
+                margin-bottom: 1rem;
+            }
+            header .logo a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+header .logo a img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+            header nav {
+                width: 100%;
+            }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: #33333358;
+                color: #ffffff76;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+            }
+
+            .menu-toggle:hover {
+                background: #797676d3;
+            }
+
+            .menu-toggle.active + nav ul {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            header nav ul {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 50px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .contact-section {
+            color: #cccccc;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        .detail-kontak, .form-kontak {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(45, 45, 45, 0.804);
+            animation: slideUp 1s ease-in-out;
+        }
+
+        /* Updated styles for detail-kontak */
+        .detail-kontak {
+            color: white;
+        }
+
+        .detail-kontak h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .detail-kontak p {
+            text-align: left;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .detail-kontak a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .detail-kontak a:hover {
+            color: #cccccc;
+            text-decoration: underline;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #b70101;
+            color: rgba(255, 255, 255, 0.531);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: linear-gradient(to right, #a20202, #02129f);
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .detail-kontak, .form-kontak {
+                width: 45%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            background-color: #0c1147bd;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: left;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+
+        .footer-content div {
+            flex: 1;
+            padding: 0 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 0.5rem;
+            background-color: #4f1111c9;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+            <img src="./img/logo.png" alt="Logo">
+        </div>
+        <div class="menu-toggle">menu</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="contact-section">
+            <h2>HUBUNGI KAMI</h2>
+            <p>
+                Kami ingin sekali mendengar kabar dari Anda. Jangan ragu untuk menghubungi kami melalui formulir kontak di bawah ini atau menggunakan rincian yang diberikan.
+            </p>
+            <div class="contact-info">
+                <div class="detail-kontak">
+                    <h3>Detail Kontak</h3>
+                    <p><strong>Alamat:</strong> JL KI HAJAR DEWANTORO, GROWONG KIDUL, JUWANA, PATI</p>
+                    <p><strong>Telepon:</strong> <a href="tel:+628122902033">+62 8122 9020 33</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:mamanjaya.mjofficial@gmail.com">mamanjaya.mjofficial@gmail.com</a></p>
+                </div>
+                <div class="form-kontak">
+                    <h3>Kirim Pesan</h3>
+                    <form action="mailto:mamanjaya.mjofficial@gmail.com" method="post">
+                        <input type="text" name="name" placeholder="Nama Anda" required>
+                        <input type="email" name="email" placeholder="Email Anda" required>
+                        <textarea name="message" placeholder="Pesan" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <center>
+                <div class="about-us">
+                    <h3>Tentang Kami</h3>
+                    <p>MAMAN JAYA Kuningan adalah sebuah perusahaan produksi furniture accesories yang berdiri sejak tahun 1996.</p>
+                    <div class="social-media">
+                        <a href="https://wa.me/628122902033" class="social-icon">
+                            <img src="./img/wa.png" alt="WhatsApp" width="24" height="24">
+                        </a>
+                        <a href="https://www.instagram.com/mamanjaya.kuningan/" class="social-icon">
+                            <img src="./img/ig.png" alt="Instagram" width="24" height="24">
+                        </a>
+                        <!--<a href="#" class="social-icon">
+                            <img src="./img/fb.png" alt="Facebook" width="24" height="24">
+                        </a>-->
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="footer-bottom">
+            <a href="#top" class="back-to-top">Kembali Ke Atas</a>
+            <p>&copy;2025 All Rights Reserved. PT. Logam Jaya Abadi.</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
