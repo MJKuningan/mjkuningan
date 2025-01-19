@@ -3,101 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact MAMAN JAYA via WhatsApp</title>
+    <title>MJ KUNINGAN</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo2.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+        html {
+    scroll-behavior: smooth;
+}
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('./img/nium.png');
+        }
+
+        header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .container {
-            max-width: 600px;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        header .logo {
+            flex: 1;
+            max-width: 150px;
+        }
+
+        header .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        header nav {
+            flex: 2;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #424242;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .logo {
+                margin-bottom: 1rem;
+            }
+
+            header .logo a {
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            header .logo a img {
+                max-width: 100%;
+                height: auto;
+                vertical-align: middle;
+            }
+
+            header nav {
+                width: 100%;
+            }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: #33333358;
+                color: #ffffff76;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+            }
+
+            .menu-toggle:hover {
+                background: #797676d3;
+            }
+
+            .menu-toggle.active + nav ul {
+                display: flex;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .logo {
+                margin-bottom: 1rem;
+            }
+            header .logo a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+header .logo a img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+            header nav {
+                width: 100%;
+            }
+
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: #33333358;
+                color: #ffffff76;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+            }
+
+            .menu-toggle:hover {
+                background: #797676d3;
+            }
+
+            .menu-toggle.active + nav ul {
+                display: flex;
+            }
+        }
+        /* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu-toggle.active + nav ul {
+        display: flex;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+    
+        .about-section {
+          color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    
+    .about-section h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    
+    .about-section p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background: rgba(45, 45, 45, 0.804);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+      .map-container {
+        margin-top: 20px;
+    }
+    
+    iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        footer {
+            background-color: #0c1147bd;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: left;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+
+        .footer-content div {
+            flex: 1;
+            padding: 0 1rem;
+        }
+
+        .footer-bottom {
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
+            padding: 0.5rem;
+            background-color: #4f1111c9;
         }
 
-        h1 {
-            color: #25D366;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .whatsapp-link {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .whatsapp-link:hover {
-            background-color: #1da851;
-            transform: scale(1.05);
-        }
-
-        .whatsapp-icon {
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #555;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .back-button:hover {
-            background-color: #333;
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="menu-toggle">menu</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <h1>Contact MAMAN JAYA</h1>
-        <p>For the Product Catalog, please contact us via WhatsApp.</p>
-        <a href="https://wa.me/628122902033" class="whatsapp-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="whatsapp-icon" width="24" height="24">
-            Chat via WhatsApp
-        </a>
-        <br>
-        <a href="javascript:history.back()" class="back-button">Back</a>
+        <section class="about-section">
+          <h2>Tentang Kami</h2>
+          <p>
+            Selamat datang di MAMAN JAYA, sumber nomor satu untuk aksesoris furnitur dan produk perangkat keras. Kami berdedikasi untuk memberikan Anda produk terbaik kami, dengan fokus pada kualitas, layanan pelanggan, dan keunikan.
+          </p>
+          <p>
+            Didirikan pada tahun 1996, MAMAN JAYA telah berkembang jauh dari awal berdirinya di Pati. Ketika kami pertama kali memulai, hasrat kami terhadap "furnitur ramah lingkungan" mendorong kami untuk memulai bisnis kami sendiri.
+          </p>
+          <p>
+            Kami harap Anda menikmati produk kami sama seperti kami menikmati menawarkannya kepada Anda. Jika Anda memiliki pertanyaan atau komentar, jangan ragu untuk menghubungi kami.
+          </p>
+        </section>
+    <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.486253649181!2d111.13943271338941!3d-6.710355738757761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2aefe98a542018b7%3A0x7a4c4cfc8160963!2sMAMAN%20JAYA%20Kuningan%20-%20Furniture%20Accessories%20%26%20Hardware%20Products!5e0!3m2!1sid!2sid!4v1736241911017!5m2!1sid!2sid" 
+          width="300" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
+    <footer>
+        <div class="footer-content">
+            <center>
+                <div class="about-us">
+                    <h3>Tentang Kami</h3>
+                    <p>MAMAN JAYA Kuningan adalah sebuah perusahaan produksi furniture accesories yang berdiri sejak tahun 1996.</p>
+                    <div class="social-media">
+                        <a href="https://wa.me/628122902033" class="social-icon">
+                            <img src="./img/wa.png" alt="WhatsApp" width="24" height="24">
+                        </a>
+                        <a href="https://www.instagram.com/mamanjaya.kuningan/" class="social-icon">
+                            <img src="./img/ig.png" alt="Instagram" width="24" height="24">
+                        </a>
+                        <!--<a href="#" class="social-icon">
+                            <img src="./img/fb.png" alt="Facebook" width="24" height="24">
+                        </a>-->
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="footer-bottom">
+            <a href="#top" class="back-to-top">Kembali Ke Atas</a>
+            <p>&copy;2025 All Rights Reserved. Maman Jaya Kuningan.</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });</script>
 </body>
 </html>
